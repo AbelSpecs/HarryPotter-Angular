@@ -1,0 +1,28 @@
+
+<h1>{{casa}} Characters</h1>
+<mat-divider></mat-divider>
+<br>
+
+<!-- uso de angular flex  -->
+<div fxLayout="row wrap"
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="20px"
+     class="background"
+     [ngStyle]="styles()">
+
+    <!-- uso de directiva ngFor y directiva ngIf -->
+  <div fxFlex="50"
+       fxFlex.lg="50"
+       fxFlex.sm="50"
+       style="height:fit-content"
+       *ngFor="let personaje of personajes; let i = index">
+
+       <app-table *ngIf="i==0" [personajes]="[personajes]"></app-table>
+  </div>
+
+
+</div>
+
+
+

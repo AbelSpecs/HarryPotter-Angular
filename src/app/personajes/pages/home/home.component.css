@@ -1,0 +1,12 @@
+mat-toolbar > mat-label, button{
+  font-family: 'MedievalSharp', cursive !important ;
+}
+
+button{
+  font-weight: bold;
+}
+
+.container{
+  margin-top: 10px;
+  height: 100%;
+}

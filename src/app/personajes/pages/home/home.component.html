@@ -1,0 +1,39 @@
+
+<!-- componente de material usado para el fondo gris -->
+<mat-sidenav-container fullscreen>
+  <!-- toolbar o barra superior de la aplicacion donde se encuentran diversos botones -->
+  <mat-toolbar>
+
+      <mat-label>Hogwarts</mat-label>
+
+      <span class="spacer"></span>
+
+      <button mat-button [matMenuTriggerFor]="menu">Houses</button>
+      <mat-menu #menu="matMenu">
+        <button *ngFor="let casa of casas" mat-menu-item (click)="busquedaCasa(casa)">{{casa}}</button>
+      </mat-menu>
+
+      <span class="spacer"></span>
+
+      <button mat-button routerLink="./profesores">Teachers</button>
+
+      <span class="spacer"></span>
+
+      <button mat-button routerLink="./estudiantes">Students</button>
+
+      <span class="spacer"></span>
+
+      <button mat-button [matMenuTriggerFor]="menu2">Aplications</button>
+      <mat-menu #menu2="matMenu">
+        <button *ngFor="let sol of solicitudes" mat-menu-item (click)="busquedaSolicitud(sol)">{{sol}}</button>
+      </mat-menu>
+
+  </mat-toolbar>
+
+  <div class="container">
+
+    <router-outlet></router-outlet>
+
+  </div>
+
+</mat-sidenav-container>

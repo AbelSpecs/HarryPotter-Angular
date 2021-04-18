@@ -1,0 +1,27 @@
+<h1>Applications List</h1>
+<mat-divider></mat-divider>
+<br>
+
+<!-- uso de angular flex  -->
+<div fxLayout="row wrap"
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="20px"
+     class="container"
+     [ngStyle]="styles()"
+     >
+
+     <!-- uso de directiva ngFor y directiva ngIf -->
+  <div fxFlex="50"
+       fxFlex.lg="50"
+       fxFlex.sm="50"
+       style="height: fit-content;"
+       *ngFor="let solicitud of solicitudes; let i = index">
+
+      <app-solicitudes-table *ngIf="i==0" [solicitudes]="[solicitudes]"></app-solicitudes-table>
+
+  </div>
+
+
+
+</div>

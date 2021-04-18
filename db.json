@@ -1,0 +1,58 @@
+{
+  "solicitudes": [
+    {
+      "id": 1,
+      "name": "Dobby",
+      "species": "half-giant",
+      "gender": "male",
+      "ancestry": "uknown",
+      "dateOfBirth": "20/04/1990",
+      "yearOfBirth": 1990
+    },
+    {
+      "name": "Pansy",
+      "species": "human",
+      "gender": "female",
+      "ancestry": "uknown",
+      "dateOfBirth": "04/09/1980",
+      "yearOfBirth": 1980,
+      "id": 2
+    },
+    {
+      "name": "Peter",
+      "species": "human",
+      "gender": "male",
+      "ancestry": "Pettigrew",
+      "dateOfBirth": "04/21/1960",
+      "yearOfBirth": 1960,
+      "id": 3
+    },
+    {
+      "name": "Fleur",
+      "species": "human",
+      "gender": "female",
+      "ancestry": "unknown",
+      "dateOfBirth": "04/21/1977",
+      "yearOfBirth": 1977,
+      "id": 4
+    },
+    {
+      "name": "Myrtle",
+      "species": "human",
+      "gender": "female",
+      "ancestry": "muggles",
+      "dateOfBirth": "04/22/1929",
+      "yearOfBirth": 1929,
+      "id": 5
+    },
+    {
+      "name": "Neville",
+      "species": "human",
+      "gender": "male",
+      "ancestry": "hagrid",
+      "dateOfBirth": "07/30/1980",
+      "yearOfBirth": 1980,
+      "id": 6
+    }
+  ]
+}
