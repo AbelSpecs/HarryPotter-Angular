@@ -29,4 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## How to use this App 
 
+First of all do a `npm install` and then just in case install json server with `npm install -g json-server`.
+
 Run the application with `ng serve -o` and then run json server with `json-server --watch db.json` to simulate a database
