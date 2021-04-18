@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-homepage',
+  templateUrl: './homepage.component.html',
+  styleUrls: ['./homepage.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomePageComponent implements OnInit {
 
   /* arreglos usados para las listas que se encuentran en la toolbar */
   casas: string[] = ['Gryffindor', 'Ravenclaw', 'Hufflepuff', 'Slytherin'];
@@ -24,9 +24,9 @@ export class HomeComponent implements OnInit {
 
   busquedaSolicitud = (ruta: string) => {
     if ( ruta === 'Send Application'){
-      this.navegacion.navigate(['personajes/crearsolicitud']);
+      this.navegacion.navigate(['solicitudes/crearsolicitud']);
     }else{
-      this.navegacion.navigate(['personajes/solicitudes']);
+      this.navegacion.navigate(['solicitudes/solicitudes']);
     }
   }
 

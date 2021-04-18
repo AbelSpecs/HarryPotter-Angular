@@ -2,6 +2,11 @@ table {
   width: 100%;
 }
 
+th,td{
+  font-family: 'MedievalSharp', cursive !important ;
+  font-weight: bold;
+}
+
 img{
   width: 110px;
   height: 150px;
@@ -11,4 +16,8 @@ img{
 .center{
   text-align: center;
 
+}
+
+.margin{
+  margin: 10%;
 }

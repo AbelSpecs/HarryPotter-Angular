@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import * as moment from 'moment';
-import { SolictudesService } from '../../services/solictudes.service';
+import { SolictudesService } from '../../services/solicitudes.service';
 import { Solicitud } from '../../interfaces/solicitud.interface';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -29,7 +30,9 @@ export class FormComponent implements OnInit {
   minDate: Date;
   maxDate: Date;
 
-  constructor(private fb: FormBuilder, private solicitudService: SolictudesService ) {
+  constructor(private fb: FormBuilder,
+              private solicitudService: SolictudesService,
+              private _snackBar: MatSnackBar ) {
     /* Validacion para que la fecha minima no sea menor al año 1981
     y que la maxima no sea mayor a 2022 */
     const currentYear = new Date().getFullYear();
@@ -61,7 +64,14 @@ export class FormComponent implements OnInit {
     };
     console.log(solicitud);
     this.solicitudService.sendSolicitudes(solicitud);
-
+    this.openSnackBar('Application Sent!!');
   }
 
+  openSnackBar(message: string) {
+    this._snackBar.open(message, null, {
+      duration: 2000,
+    });
+  }
 }
+
+

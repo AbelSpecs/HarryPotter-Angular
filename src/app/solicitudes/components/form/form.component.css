@@ -76,3 +76,7 @@ label, mat-label, mat-datepicker-toggle, input{
 label{
   font-weight: bold;
 }
+
+.snackbar {
+  margin-right: 12px;
+}

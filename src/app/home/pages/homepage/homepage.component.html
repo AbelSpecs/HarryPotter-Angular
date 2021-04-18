@@ -1,10 +1,10 @@
 
 <!-- componente de material usado para el fondo gris -->
-<mat-sidenav-container fullscreen>
+<mat-sidenav-container class="fondo" fullscreen>
   <!-- toolbar o barra superior de la aplicacion donde se encuentran diversos botones -->
   <mat-toolbar>
 
-      <mat-label>Hogwarts</mat-label>
+      <mat-label routerLink="homepage">Hogwarts</mat-label>
 
       <span class="spacer"></span>
 
@@ -15,11 +15,11 @@
 
       <span class="spacer"></span>
 
-      <button mat-button routerLink="./profesores">Teachers</button>
+      <button mat-button routerLink="/personajes/profesores">Teachers</button>
 
       <span class="spacer"></span>
 
-      <button mat-button routerLink="./estudiantes">Students</button>
+      <button mat-button routerLink="/personajes/estudiantes">Students</button>
 
       <span class="spacer"></span>
 
@@ -32,8 +32,11 @@
 
   <div class="container">
 
+    <h1 class="center">Welcome to Hogwarts!!</h1>
     <router-outlet></router-outlet>
 
   </div>
 
 </mat-sidenav-container>
+
+

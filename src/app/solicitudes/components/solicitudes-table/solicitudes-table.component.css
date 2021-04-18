@@ -2,6 +2,11 @@ table {
   width: 100%;
 }
 
+th,td{
+  font-family: 'MedievalSharp', cursive !important ;
+  font-weight: bold;
+}
+
 th.mat-sort-header-sorted {
   color: black;
 }

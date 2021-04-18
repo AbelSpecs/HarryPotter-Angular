@@ -53,6 +53,42 @@
       "dateOfBirth": "07/30/1980",
       "yearOfBirth": 1980,
       "id": 6
+    },
+    {
+      "name": "Alastor",
+      "species": "werewolf",
+      "gender": "male",
+      "ancestry": "uknowkn",
+      "dateOfBirth": "04/05/2021",
+      "yearOfBirth": 2021,
+      "id": 7
+    },
+    {
+      "name": "James",
+      "species": "human",
+      "gender": "male",
+      "ancestry": "uknown",
+      "dateOfBirth": "04/06/2021",
+      "yearOfBirth": 2021,
+      "id": 8
+    },
+    {
+      "name": "Belen",
+      "species": "werewolf",
+      "gender": "female",
+      "ancestry": "unknown",
+      "dateOfBirth": "04/06/2021",
+      "yearOfBirth": 2021,
+      "id": 9
+    },
+    {
+      "name": "Belen",
+      "species": "werewolf",
+      "gender": "female",
+      "ancestry": "uknown",
+      "dateOfBirth": "02/17/1981",
+      "yearOfBirth": 1981,
+      "id": 10
     }
   ]
 }
