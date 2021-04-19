@@ -3,12 +3,17 @@ mat-toolbar > mat-label, button, h1{
   font-family: 'MedievalSharp', cursive !important ;
 }
 
+mat-toolbar{
+  height: auto;
+}
+
 button{
   font-weight: bold;
 }
 
 .fondo{
   background-image: url('/assets/images/hogwarts-casttle.jpg');
+  background-size: cover;
 }
 .container{
   margin-top: 10px;

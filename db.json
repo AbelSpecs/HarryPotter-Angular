@@ -89,6 +89,15 @@
       "dateOfBirth": "02/17/1981",
       "yearOfBirth": 1981,
       "id": 10
+    },
+    {
+      "name": "Teresa zamora",
+      "species": "half-giant",
+      "gender": "female",
+      "ancestry": "desconocido",
+      "dateOfBirth": "10/08/1981",
+      "yearOfBirth": 1981,
+      "id": 11
     }
   ]
 }
