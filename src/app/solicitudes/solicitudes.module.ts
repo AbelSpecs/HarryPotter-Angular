@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SolicitudesRoutingModule } from './solicitudes-routing.module';
 
 import { PipesModule } from '../pipes/pipes.module';
-import { DialogComponent } from './components/dialog/dialog.component';
+
 
 
 
@@ -21,7 +21,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
     SolicitudesComponent,
     FormComponent,
     SolicitudesTableComponent,
-    DialogComponent,
+
 
   ],
   imports: [
