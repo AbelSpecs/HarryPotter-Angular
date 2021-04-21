@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import {MatPaginator} from '@angular/material/paginator';
 import { Solicitud } from '../../interfaces/solicitud.interface';
 
 @Component({
@@ -19,9 +20,11 @@ export class SolicitudesTableComponent implements OnInit, AfterViewInit  {
   dataSource: MatTableDataSource<Solicitud>;
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor() { }
 
   ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
 
