@@ -8,22 +8,22 @@
 
       <span class="spacer"></span>
 
-      <button mat-button [matMenuTriggerFor]="menu">Houses</button>
+      <button mat-button [matMenuTriggerFor]="menu">Casas</button>
       <mat-menu #menu="matMenu">
         <button *ngFor="let casa of casas" mat-menu-item (click)="busquedaCasa(casa)">{{casa}}</button>
       </mat-menu>
 
       <span class="spacer"></span>
 
-      <button mat-button routerLink="/personajes/profesores">Teachers</button>
+      <button mat-button routerLink="/personajes/profesores">Profesores</button>
 
       <span class="spacer"></span>
 
-      <button mat-button routerLink="/personajes/estudiantes">Students</button>
+      <button mat-button routerLink="/personajes/estudiantes">Estudiantes</button>
 
       <span class="spacer"></span>
 
-      <button mat-button [matMenuTriggerFor]="menu2">Aplications</button>
+      <button mat-button [matMenuTriggerFor]="menu2">Solicitudes</button>
       <mat-menu #menu2="matMenu">
         <button *ngFor="let sol of solicitudes" mat-menu-item (click)="busquedaSolicitud(sol)">{{sol}}</button>
       </mat-menu>
@@ -32,7 +32,7 @@
 
   <div class="container">
 
-    <h1 class="center">Welcome to Hogwarts!!</h1>
+    <h1 class="center">Bienvenido a Hogwarts!!</h1>
     <router-outlet></router-outlet>
 
   </div>

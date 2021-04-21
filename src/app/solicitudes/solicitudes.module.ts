@@ -9,6 +9,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SolicitudesRoutingModule } from './solicitudes-routing.module';
 
+import { PipesModule } from '../pipes/pipes.module';
+import { DialogComponent } from './components/dialog/dialog.component';
+
+
 
 
 @NgModule({
@@ -17,13 +21,16 @@ import { SolicitudesRoutingModule } from './solicitudes-routing.module';
     SolicitudesComponent,
     FormComponent,
     SolicitudesTableComponent,
+    DialogComponent,
+
   ],
   imports: [
     CommonModule,
     MaterialModule,
     SolicitudesRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    PipesModule
   ]
 })
 export class SolicitudesModule { }

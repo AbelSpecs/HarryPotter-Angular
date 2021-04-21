@@ -11,6 +11,10 @@ import { TableComponent } from './components/table/table.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { PipesModule } from '../pipes/pipes.module';
+
+
+
 
 
 
@@ -20,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     EstudiantesComponent,
     ProfesoresComponent,
     TableComponent,
+
   ],
   imports: [
     CommonModule,
@@ -27,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     PersonajesRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
-  ]
+    FormsModule,
+    PipesModule
+  ],
 })
 export class PersonajesModule { }

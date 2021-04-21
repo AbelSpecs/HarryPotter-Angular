@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Estudiante } from '../../interfaces/estudiante.interface';
+
 import { PersonajesService } from '../../services/personajes.service';
+import { IPersona } from '../../interfaces/personajes.interface';
 
 @Component({
   selector: 'app-estudiantes',
@@ -10,7 +11,7 @@ import { PersonajesService } from '../../services/personajes.service';
 export class EstudiantesComponent implements OnInit {
 
   /* variable estudiantes recibe una lista de todos los estudiantes desde la peticion */
-  estudiantes: Estudiante[];
+  estudiantes: IPersona[];
   /* variable para el logo de fondo */
   logo: string;
 

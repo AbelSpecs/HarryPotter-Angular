@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonajesService } from '../../services/personajes.service';
-import { Profesor } from '../../interfaces/profesor.interface';
+
+import { IPersona } from '../../interfaces/personajes.interface';
 
 @Component({
   selector: 'app-profesores',
@@ -10,7 +11,7 @@ import { Profesor } from '../../interfaces/profesor.interface';
 export class ProfesoresComponent implements OnInit {
 
   /* variable para guardar la lista de profesores */
-  profesores: Profesor[];
+  profesores: IPersona[];
   logo: string;
 
   constructor(private personajesService: PersonajesService) { }

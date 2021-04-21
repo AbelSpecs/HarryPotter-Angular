@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonajesService } from '../../services/personajes.service';
-import { Personaje } from '../../interfaces/personajes.interface';
+import { IPersona } from '../../interfaces/personajes.interface';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -17,7 +17,7 @@ export class ListadoComponent implements OnInit {
               { this.router.routeReuseStrategy.shouldReuseRoute = () => false; }
 
   /* variable personajes recibe una lista de personajes de la peticion */
-  personajes: Personaje[];
+  personajes: IPersona[];
   /* variable casa guarda el parametro de la ruta */
   casa: string;
   /* variable para guardar el logo de fondo */

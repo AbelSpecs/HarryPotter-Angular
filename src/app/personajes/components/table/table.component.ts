@@ -1,9 +1,10 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { Estudiante } from '../../interfaces/estudiante.interface';
+
 import {MatTableDataSource} from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
-import { Profesor } from '../../interfaces/profesor.interface';
-import { Personaje } from '../../interfaces/personajes.interface';
+import {MatPaginator} from '@angular/material/paginator';
+
+import { IPersona } from '../../interfaces/personajes.interface';
 
 
 
@@ -15,20 +16,22 @@ import { Personaje } from '../../interfaces/personajes.interface';
 export class TableComponent implements OnInit{
 
   /* personajes recibidos desde otro componente */
-  @Input() personajes!: Estudiante | Profesor | Personaje;
+  @Input() personajes!: IPersona;
 
   /* columnas a mostrase en la tabla */
   displayedColumns: string[] = ['name', 'patronus', 'age', 'image'];
   /* data de la tabla */
-  dataSource: MatTableDataSource<Estudiante | Profesor | Personaje>;
+  dataSource: MatTableDataSource<IPersona>;
 
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor() {
 
   }
 
   ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
 
