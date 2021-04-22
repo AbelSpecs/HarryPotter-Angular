@@ -23,16 +23,17 @@
 
       <span class="spacer"></span>
 
-      <button mat-button [matMenuTriggerFor]="menu2">Solicitudes</button>
-      <mat-menu #menu2="matMenu">
-        <button *ngFor="let sol of solicitudes" mat-menu-item (click)="busquedaSolicitud(sol)">{{sol}}</button>
-      </mat-menu>
+      <button mat-button routerLink="/solicitudes/solicitudes">Solicitudes</button>
 
   </mat-toolbar>
 
+  <div class="container home">
+    <h1 class="center">Bienvenido a Hogwarts!!</h1>
+  </div>
+
   <div class="container">
 
-    <h1 class="center">Bienvenido a Hogwarts!!</h1>
+
     <router-outlet></router-outlet>
 
   </div>

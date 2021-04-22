@@ -1,4 +1,12 @@
-<h1>Applications List</h1>
+<div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" class="title">
+
+    <h1>Agregue Estudiantes</h1>
+    <span class="spacer"></span>
+    <button mat-stroked-button color="warn" (click)="openDialog()">Nueva Solicitud</button>
+
+
+
+</div>
 <mat-divider></mat-divider>
 <br>
 
@@ -11,14 +19,21 @@
      [ngStyle]="styles()"
      >
 
+    <div class="example-button-container">
+    <button mat-mini-fab color="warn" (click)="refrescar()" aria-label="Example icon button with a filter list icon">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </div>
      <!-- uso de directiva ngFor y directiva ngIf -->
   <div fxFlex="50"
        fxFlex.lg="50"
        fxFlex.sm="50"
        style="height: fit-content;"
-       *ngFor="let solicitud of solicitudes; let i = index">
+       *ngFor="let solicitud of solicitudes2; let i = index">
 
-      <app-solicitudes-table *ngIf="i==0" [solicitudes]="[solicitudes]"></app-solicitudes-table>
+
+      <app-solicitudes-table *ngIf="i==0 && solicitudes.length!=0" [solicitudes]="[solicitudes]"></app-solicitudes-table>
+      <app-solicitudes-table *ngIf="solicitudes.length==0 && i==0" [solicitudes]="[solicitudes2]"></app-solicitudes-table>
 
   </div>
 

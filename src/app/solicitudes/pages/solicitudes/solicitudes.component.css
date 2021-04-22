@@ -1,9 +1,21 @@
-h1{
+h1, button{
   font-family: 'MedievalSharp', cursive !important ;
   font-weight: bold;
+  text-align: center;
 }
 
 .container{
   background: fixed;
 
 }
+
+.title{
+  display: flex;
+  justify-content: space-between;
+}
+
+.alert{
+  color: white;
+}
+
+

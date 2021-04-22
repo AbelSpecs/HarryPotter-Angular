@@ -9,10 +9,6 @@ const routes: Routes = [
     path: '',
     component: HomePageComponent,
     children: [
-      /* {
-        path: 'homepage',
-        component: HomePageComponent
-      }, */
       {
         path: '**',
         redirectTo: '/home'

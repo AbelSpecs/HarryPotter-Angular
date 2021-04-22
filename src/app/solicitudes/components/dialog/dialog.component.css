@@ -9,7 +9,7 @@
 }
 .login-form-1 h3{
   text-align: center;
-  color: #333;
+  color: white
 }
 
 .login-radius{
@@ -66,11 +66,11 @@
 }
 
 label, mat-label, mat-datepicker-toggle, input{
-  color: black !important;
+  color: white;
 }
 
 ::ng-deep .mat-select-value-text, .mat-select-arrow{
-    color : black;
+    color : white;
   }
 
 label{
@@ -80,3 +80,15 @@ label{
 .snackbar {
   margin-right: 12px;
 }
+
+
+/* @media screen and (max-width: 575px) {
+
+  .mat-dialog-container{
+    height: 50vh !important;
+  }
+
+}
+ */
+
+

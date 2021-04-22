@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SolictudesService } from '../../services/solicitudes.service';
 import { Solicitud } from '../../interfaces/solicitud.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../../components/dialog/dialog.component';
+
 
 @Component({
   selector: 'app-solicitudes',
@@ -10,24 +13,42 @@ import { Solicitud } from '../../interfaces/solicitud.interface';
 export class SolicitudesComponent implements OnInit {
 
   /* variable que guarda la lista de solicitudes */
-  solicitudes: Solicitud[];
-  /* variable para guardar el fondo */
-  background: string;
+  solicitudes: Solicitud[] = [];
+  solicitudes2: Solicitud[] = [];
 
-  constructor(private solicitudService: SolictudesService) { }
+  constructor(private solicitudService: SolictudesService,
+              public dialog: MatDialog) { }
 
   /* hook en el que se hace la peticion */
   ngOnInit(): void {
-    this.background = 'letter.png';
-    this.solicitudService.getSolicitudes()
-      .subscribe(resp => {
-        this.solicitudes = resp;
-      });
+
+    this.solicitudService.Solicitudes.subscribe(resp => {
+      this.solicitudes = resp;
+
+    });
+
+    this.solicitudes2 = this.solicitudService.obtenerSolictudes();
+
   }
+  /* metodo para refrescar la tabla solo la primera vez */
+  refrescar() {
+    this.solicitudes2 = this.solicitudService.obtenerSolictudes();
+  }
+
 
   /* metodo para agregar estilos */
   styles(): Object {
-    return {backgroundImage: 'url(assets/images/' + this.background + ')', height: '100%'};
+    return { height: '100%'};
+}
+
+openDialog(): void {
+  const dialogRef = this.dialog.open(DialogComponent, {
+
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+  });
 }
 
 }

@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import * as moment from 'moment';
 import { SolictudesService } from '../../services/solicitudes.service';
 import { Solicitud } from '../../interfaces/solicitud.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  selector: 'app-dialog',
+  templateUrl: './dialog.component.html',
+  styleUrls: ['./dialog.component.css']
 })
-export class FormComponent implements OnInit {
+export class DialogComponent implements OnInit {
 
   /* arreglos que se usan para los desplegables de genero y especies en el form */
   generos: string[] = ['female', 'male'];
   especies: string[] = ['half-giant', 'human', 'werewolf'];
+  screenWidth: any;
+  screenHeight: any;
 
   /* FormControls que se usan para validar los campos del form */
   miFormulario: FormGroup = this.fb.group({
@@ -32,7 +34,8 @@ export class FormComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private solicitudService: SolictudesService,
-              private _snackBar: MatSnackBar ) {
+              private _snackBar: MatSnackBar,
+              public dialogRef: MatDialogRef<DialogComponent> ) {
     /* Validacion para que la fecha minima no sea menor al año 1981
     y que la maxima no sea mayor a 2022 */
     const currentYear = new Date().getFullYear();
@@ -41,6 +44,24 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.screenWidth = window.innerWidth;
+    this.screenHeight = window.innerHeight;
+
+    if(this.screenWidth < 575){
+      this.dialogRef.updateSize('100%', '70vh');
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+
+    console.log(event);
+    this.screenWidth = window.innerWidth;
+    this.screenHeight = window.innerHeight;
+
+    if(this.screenWidth < 575){
+      this.dialogRef.updateSize('100%', '70vh');
+    }
   }
 
   /* Metodo que ayuda a saber cuando se van a disparar las validaciones del formulario */
@@ -49,7 +70,7 @@ export class FormComponent implements OnInit {
             && this.miFormulario.controls[campo].touched;
   }
 
-  /* Metodo que crea una solicitud y la guarda en el db.json*/
+  /* Metodo que crea una solicitud y la guarda en el store*/
   enviarSolicitud = () => {
     const {nombre, especie, genero, ancestry, yearOfBirth} = this.miFormulario.value;
     const date = moment(yearOfBirth).format('L');
@@ -62,9 +83,15 @@ export class FormComponent implements OnInit {
       dateOfBirth: date,
       yearOfBirth: Number(year)
     };
-    console.log(solicitud);
-    this.solicitudService.sendSolicitudes(solicitud);
-    this.openSnackBar('Application Sent!!');
+
+    if (nombre === '' || especie === '' || genero === '' || ancestry === '' || yearOfBirth === '' ){
+      this.openSnackBar('Rellene todos los campos');
+    }else{
+      this.solicitudService.addSolicitudes(solicitud);
+      this.openSnackBar('Solicitud Agregada!!');
+      this.dialogRef.close();
+    }
+
   }
 
   openSnackBar(message: string) {
@@ -72,6 +99,5 @@ export class FormComponent implements OnInit {
       duration: 2000,
     });
   }
+
 }
-
-
